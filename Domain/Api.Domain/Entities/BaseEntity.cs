@@ -18,7 +18,7 @@ namespace Api.Domain.Entities
             set { _timestamp = DateTime.UtcNow; }
         }
 
-        public DateTime LastUpdateDate { get; set; }
+        //public DateTime LastUpdateDate { get; set; }
 
     }
 }

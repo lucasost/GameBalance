@@ -7,7 +7,7 @@ using System.Text;
 namespace Api.Domain.Entities
 {
     [Table("Games")]
-    public class Game : BaseEntity
+    public class GameEntity : BaseEntity
     {
         [Display(Name = "Player")]
         public long PlayerId { get; set; }

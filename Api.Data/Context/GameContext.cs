@@ -12,7 +12,7 @@ namespace Api.Data.Context
         {
         }
 
-        public DbSet<Game> Games { get; set; }
+        public DbSet<GameEntity> Games { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Service\Api.Service.csproj" />
+    <ProjectReference Include="..\CrossCutting\Api.CrossCutting\Api.CrossCutting.csproj" />
+    <ProjectReference Include="..\Domain\Api.Domain\Api.Domain.csproj" />
   </ItemGroup>
 
 

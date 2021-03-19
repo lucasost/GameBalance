@@ -5,12 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="Mapping\" />
-    <Folder Include="Repository\" />
+    <Compile Remove="Context\**" />
+    <Compile Remove="Mapping\**" />
+    <Compile Remove="Repository\**" />
+    <EmbeddedResource Remove="Context\**" />
+    <EmbeddedResource Remove="Mapping\**" />
+    <EmbeddedResource Remove="Repository\**" />
+    <None Remove="Context\**" />
+    <None Remove="Mapping\**" />
+    <None Remove="Repository\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Api.Data\Api.Data.csproj" />
+    <ProjectReference Include="..\..\Api.Service\Api.Service.csproj" />
     <ProjectReference Include="..\..\Domain\Api.Domain\Api.Domain.csproj" />
   </ItemGroup>
 
