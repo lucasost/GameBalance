@@ -2,7 +2,6 @@ using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using Xunit;
 
 namespace Api.Data.Test
 {
@@ -11,8 +10,6 @@ namespace Api.Data.Test
         public BaseTest()
         {
         }
-
-       
     }
     public class DbTest : IDisposable
     {

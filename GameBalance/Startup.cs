@@ -81,39 +81,39 @@ namespace GameBalance
                 endpoints.MapControllers();
             });
 
-            // Seed data
-            //using (var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            //{
-            //    using (var context = service.ServiceProvider.GetService<GameContext>())
-            //    {
-            //        context.Database.Migrate();
+            //Seed
+            using (var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                using (var context = service.ServiceProvider.GetService<GameContext>())
+                {
+                    context.Database.Migrate();
 
-            //        if (!context.Games.Any())
-            //        {
-            //            var games = new List<GameEntity>();
+                    if (!context.Games.Any())
+                    {
+                        var games = new List<GameEntity>();
 
-            //            for (int i = 0; i < 200; i++)
-            //            {
-            //                var randomGameId = new Random();
-            //                var randomPlayerId = new Random();
-            //                var randomWin = new Random();
+                        for (int i = 0; i < 200; i++)
+                        {
+                            var randomGameId = new Random();
+                            var randomPlayerId = new Random();
+                            var randomWin = new Random();
 
-            //                games.Add(new GameEntity()
-            //                {
-            //                    Id = Guid.NewGuid(),
-            //                    GameId = randomWin.Next(1, 30),
-            //                    PlayerId = randomWin.Next(1, 120),
-            //                    Win = randomWin.Next(-5, 8),
-            //                    Timestamp = DateTime.UtcNow
-            //                });
-            //            }
+                            games.Add(new GameEntity()
+                            {
+                                Id = Guid.NewGuid(),
+                                GameId = randomWin.Next(1, 30),
+                                PlayerId = randomWin.Next(1, 120),
+                                Win = randomWin.Next(-5, 8),
+                                Timestamp = DateTime.UtcNow
+                            });
+                        }
 
-            //            context.Games.AddRangeAsync(games);
+                        context.Games.AddRangeAsync(games);
 
-            //            context.SaveChanges();
-            //        }
-            //    }
-            //}
+                        context.SaveChanges();
+                    }
+                }
+            }
         }
     }
 }

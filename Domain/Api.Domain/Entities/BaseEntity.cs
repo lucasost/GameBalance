@@ -7,7 +7,5 @@ namespace Api.Domain.Entities
     {
         [Key]
         public Guid Id { get; set; }
-
-      
     }
 }

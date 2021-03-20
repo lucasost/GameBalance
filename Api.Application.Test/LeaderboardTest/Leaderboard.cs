@@ -1,5 +1,4 @@
 ﻿using Api.Application.Controllers;
-using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.Game;
 using Api.Domain.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,6 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -16,8 +14,6 @@ namespace Api.Application.Test.LeaderboardTest
     public class Leaderboard
     {
         private LeaderboardController _controller;
-
-        private Mock<ILeaderboardService> serviceMoq;
 
         [Fact(DisplayName = "Quando Requisitar GetTop100 - BadRequest")]
         [Trait("Application", "GetTop100 - BadRequest")]

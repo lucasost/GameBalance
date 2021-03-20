@@ -1,6 +1,4 @@
 ﻿using Api.Data.Context;
-using Api.Data.Repository;
-using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Api.Domain.ViewModel;
 using Microsoft.EntityFrameworkCore;

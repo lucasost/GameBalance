@@ -8,8 +8,6 @@ namespace Api.Data.Context
         public GameContext(DbContextOptions<GameContext> options) : base(options)
         {
         }
-
         public DbSet<GameEntity> Games { get; set; }
-
     }
 }

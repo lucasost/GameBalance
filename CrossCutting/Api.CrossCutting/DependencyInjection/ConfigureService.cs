@@ -11,9 +11,6 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddTransient<IGameService, GameService>();
 
             serviceCollection.AddTransient<ILeaderboardService, LeaderboardService>();
-
-
         }
-
     }
 }
