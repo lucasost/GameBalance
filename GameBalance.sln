@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		createDb.sql = createDb.sql
 		docker-compose.yml = docker-compose.yml
 		README.md = README.md
+		RunApp.ps1 = RunApp.ps1
+		C:\Users\Lucas Ost\Downloads\SwaggerApi.PNG = C:\Users\Lucas Ost\Downloads\SwaggerApi.PNG
 	EndProjectSection
 EndProject
 Global

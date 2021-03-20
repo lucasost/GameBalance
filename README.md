@@ -12,9 +12,14 @@ Desafio Técnico FullStack .Net
 
 - Ir na pasta do projeto e executar:
 ```
- docker-compose up
+ RunApp.ps1
+ ```
+
+
 ```
- 
+Set-ExecutionPolicy Bypass -Scope CurrentUser -Force 
+```
+
  - Acessar o container docker criado e adicionar o banco "Games" (pode ser via comando ou atráves Magnam
  - Definir o projeto Api.Application como principal
  - No Package Manager Console, selecione o projeto Api.Data e execute o comando 
