@@ -10,8 +10,9 @@ Desafio Técnico FullStack .Net
  
  - Acessar o container docker criado e adicionar o banco "Games"
  - No projeto Api.Data rodar o comando 
- > Update-Database
-
+```
+ Update-Database
+```
 - Definir o projeto Api.Application com principal
  - Executar
 
