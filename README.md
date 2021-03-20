@@ -3,10 +3,19 @@ Desafio Técnico FullStack .Net
 
 ***Instruções:***
 
-Ir na pasta do projeto e executar:
+- Ir na pasta do projeto e executar:
 ```
  docker-compose up
- ```
+```
+ 
+ - Acessar o container docker criado e adicionar o banco "Games"
+ - No projeto Api.Data rodar o comando 
+ > Update-Database
+
+- Definir o projeto Api.Application com principal
+ - Executar
+
+*Obs:* A deploy será realizado um Seed com 200 registros.
 
 **Desafio proposto:**
 Desafio técnico fullstack – KPMG
