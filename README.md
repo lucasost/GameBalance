@@ -15,12 +15,11 @@ Desafio Técnico FullStack .Net
  RunApp.ps1
  ```
 
-
+* Se a execução apresentar erro, execute o comando abaixo e depois tente executar o RunApp.ps1 novamente. *
 ```
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force 
 ```
 
- - Acessar o container docker criado e adicionar o banco "Games" (pode ser via comando ou atráves Magnam
  - Definir o projeto Api.Application como principal
  - No Package Manager Console, selecione o projeto Api.Data e execute o comando 
 
@@ -28,12 +27,13 @@ Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
  Update-Database
 ```
 
- - Executar
+ - Executar a aplicação
 
 ***Observações:***
 - A cada deploy será realizado um Seed com 200 registros.
 - Certifique que não possua nenhum container docker usando a porta 1533.
 
+![Swagger](https://github.com/lucasost/GameBalance/blob/master/SwaggerApi.PNG?raw=true)
 
 **Desafio proposto:**
 Desafio técnico fullstack – KPMG
