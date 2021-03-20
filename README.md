@@ -1,6 +1,13 @@
 # GameBalance
 Desafio Técnico FullStack .Net
 
+***Ferramentas utilizadas***
+- Visual Studio / Visual Studio Code
+- Docker
+
+***Extension utilizada (opcional)***
+- Sonar
+
 ***Instruções:***
 
 - Ir na pasta do projeto e executar:
@@ -8,7 +15,7 @@ Desafio Técnico FullStack .Net
  docker-compose up
 ```
  
- - Acessar o container docker criado e adicionar o banco "Games"
+ - Acessar o container docker criado e adicionar o banco "Games" (pode ser via comando ou atráves Magnam
  - No projeto Api.Data rodar o comando 
 ```
  Update-Database
@@ -16,7 +23,10 @@ Desafio Técnico FullStack .Net
 - Definir o projeto Api.Application como principal
  - Executar
 
-*Obs:* A cada deploy será realizado um Seed com 200 registros.
+***Observações:***
+- A cada deploy será realizado um Seed com 200 registros.
+- Certifique que não possua nenhum container docker usando a porta 1433.
+
 
 **Desafio proposto:**
 Desafio técnico fullstack – KPMG
