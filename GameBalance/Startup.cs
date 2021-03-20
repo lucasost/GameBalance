@@ -38,7 +38,8 @@ namespace GameBalance
 
             services.AddSwaggerGen(a =>
             {
-                a.SwaggerDoc("V1", new OpenApiInfo
+                a.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+                a.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "Desafio técnico FULLSTACK",
@@ -61,14 +62,15 @@ namespace GameBalance
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseSwagger();
             app.UseSwaggerUI(a =>
             {
                 a.SwaggerEndpoint("/swagger/v1/swagger.json", "Desafio Fullstack");
+                a.RoutePrefix = "/swagger";
                 a.RoutePrefix = string.Empty;
             });
+
+            app.UseDeveloperExceptionPage();
 
             app.UseRouting();
 

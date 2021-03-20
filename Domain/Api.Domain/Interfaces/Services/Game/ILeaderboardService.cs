@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Api.Domain.Interfaces.Services.Game
 {
-    public interface ILeaderboardService<T>
+    public interface ILeaderboardService
     {
         Task<List<LeaderboardViewModel>> GetTop100();
     }

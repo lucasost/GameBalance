@@ -31,6 +31,7 @@ namespace Api.Data.Implementation
                      Balance = group.Sum(a => a.Win),
                      LastUpdateDate = DateTime.UtcNow
                  })
+                 .OrderByDescending(b => b.Balance)
                  .ToListAsync();
 
             return top100;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Api.Service.Services
 {
-    public class LeaderboardService : ILeaderboardService<LeaderboardViewModel>
+    public class LeaderboardService : ILeaderboardService
     {
         private ILeaderboardRepository<LeaderboardViewModel> _repository;
         public LeaderboardService(ILeaderboardRepository<LeaderboardViewModel> repository)

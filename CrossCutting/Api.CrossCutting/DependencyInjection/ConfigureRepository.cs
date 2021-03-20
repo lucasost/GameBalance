@@ -11,6 +11,7 @@ namespace Api.CrossCutting.DependencyInjection
         public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            serviceCollection.AddScoped(typeof(ILeaderboardRepository<>), typeof(LeaderboardRepository<>));
 
             serviceCollection.AddDbContext<GameContext>(options => options.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog = Games;User Id=sa;Password=admin123@;"));
         }

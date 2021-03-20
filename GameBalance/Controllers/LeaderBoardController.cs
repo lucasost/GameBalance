@@ -1,10 +1,6 @@
-﻿using Api.Domain.Entities;
-using Api.Domain.Interfaces.Services.Game;
-using Api.Domain.ViewModel;
+﻿using Api.Domain.Interfaces.Services.Game;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -14,8 +10,8 @@ namespace Api.Application.Controllers
     [ApiController]
     public class LeaderboardController : ControllerBase
     {
-        private ILeaderboardService<LeaderboardViewModel> _service;
-        public LeaderboardController(ILeaderboardService<LeaderboardViewModel> service)
+        private ILeaderboardService _service;
+        public LeaderboardController(ILeaderboardService service)
         {
             _service = service;
         }
