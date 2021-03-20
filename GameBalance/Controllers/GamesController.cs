@@ -11,7 +11,7 @@ namespace Api.Application.Controllers
     [ApiController]
     public class GamesController : ControllerBase
     {
-        private IGameService _service;
+        private readonly IGameService _service;
         public GamesController(IGameService service)
         {
             _service = service;
@@ -24,16 +24,7 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            try
-            {
-                return Ok(await _service.GetAll());
-            }
-            catch (Exception ex)
-            {
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
-            }
+            return Ok(await _service.GetAll());
         }
 
         [Route("{id}", Name = "GetWithId")]
@@ -44,16 +35,8 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
-            {
-                return Ok(await _service.Get(id));
-            }
-            catch (Exception ex)
-            {
 
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
-            }
-
+            return Ok(await _service.Get(id));
         }
 
         [HttpPost]
@@ -63,24 +46,15 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
+            var result = await _service.Post(game);
+            if (result != null)
             {
-                var result = await _service.Post(game);
-                if (result != null)
-                {
-                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
-                }
-                else
-                {
-                    return BadRequest();
-                }
+                return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
             }
-            catch (Exception ex)
+            else
             {
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+                return BadRequest();
             }
-
         }
 
         [HttpPut]
@@ -90,24 +64,15 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
+            var result = await _service.Put(game);
+            if (result != null)
             {
-                var result = await _service.Put(game);
-                if (result != null)
-                {
-                    return Ok(result);
-                }
-                else
-                {
-                    return BadRequest();
-                }
+                return Ok(result);
             }
-            catch (Exception ex)
+            else
             {
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+                return BadRequest();
             }
-
         }
 
         [HttpDelete("{id}")]
@@ -117,16 +82,7 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-            try
-            {
-                return Ok(await _service.Delete(id));
-            }
-            catch (Exception ex)
-            {
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
-            }
-
+            return Ok(await _service.Delete(id));
         }
     }
 

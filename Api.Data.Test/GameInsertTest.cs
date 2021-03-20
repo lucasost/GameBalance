@@ -65,7 +65,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = id,
-                Timestamp = DateTime.UtcNow
             });
 
             _context.SaveChanges();
@@ -76,7 +75,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = id,
-                Timestamp = DateTime.UtcNow
             };
 
             // Act
@@ -110,7 +108,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = id,
-                Timestamp = DateTime.UtcNow
             });
 
             _context.SaveChanges();
@@ -121,7 +118,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             };
 
             // Act
@@ -144,7 +140,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -153,7 +148,6 @@ namespace Api.Data.Test
                 PlayerId = 20,
                 Win = 20,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -162,7 +156,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 3,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -171,7 +164,6 @@ namespace Api.Data.Test
                 PlayerId = 40,
                 Win = 4,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.SaveChanges();
@@ -214,7 +206,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 5,
                 Id = id,
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -223,7 +214,6 @@ namespace Api.Data.Test
                 PlayerId = 20,
                 Win = 20,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -232,7 +222,6 @@ namespace Api.Data.Test
                 PlayerId = 30,
                 Win = 3,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.Games.Add(new GameEntity()
@@ -241,7 +230,6 @@ namespace Api.Data.Test
                 PlayerId = 40,
                 Win = 4,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _context.SaveChanges();

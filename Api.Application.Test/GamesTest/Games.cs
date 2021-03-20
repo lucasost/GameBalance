@@ -37,7 +37,6 @@ namespace Api.Application.Test.GamesTest
                 PlayerId = 4,
                 Win = 2,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _controller = new GamesController(serviceMoq.Object);
@@ -73,7 +72,6 @@ namespace Api.Application.Test.GamesTest
                     PlayerId = 4,
                     Win = 2,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 }
             );
 
@@ -85,7 +83,6 @@ namespace Api.Application.Test.GamesTest
                 PlayerId = 4,
                 Win = 3,
                 GameId = 3,
-                Timestamp = DateTime.UtcNow
             };
 
             // Act
@@ -114,7 +111,6 @@ namespace Api.Application.Test.GamesTest
                     PlayerId = 4,
                     Win = 2,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 }
             );
 
@@ -127,7 +123,6 @@ namespace Api.Application.Test.GamesTest
                 PlayerId = 4,
                 Win = 3,
                 GameId = 3,
-                Timestamp = DateTime.UtcNow
             };
 
             var result = await _controller.Put(userDtoUpdate);
@@ -182,7 +177,6 @@ namespace Api.Application.Test.GamesTest
         {
             // Arrange
             var serviceMock = new Mock<IGameService>();
-            var id = Guid.NewGuid();
             serviceMock.Setup(a => a.GetAll()).ReturnsAsync(new List<GameEntity>
             {
                 new GameEntity{
@@ -190,14 +184,12 @@ namespace Api.Application.Test.GamesTest
                     PlayerId = 4,
                     Win = 2,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 },
                  new GameEntity{
                     GameId = 1,
                     PlayerId = 2,
                     Win = 3,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 }
             });
 
@@ -218,7 +210,6 @@ namespace Api.Application.Test.GamesTest
         {
             // Arrange
             var serviceMock = new Mock<IGameService>();
-            var id = Guid.NewGuid();
             serviceMock.Setup(a => a.GetAll()).ReturnsAsync(new List<GameEntity>
             {
                 new GameEntity{
@@ -226,14 +217,12 @@ namespace Api.Application.Test.GamesTest
                     PlayerId = 4,
                     Win = 2,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 },
                  new GameEntity{
                     GameId = 1,
                     PlayerId = 2,
                     Win = 3,
                     Id = Guid.NewGuid(),
-                    Timestamp = DateTime.UtcNow
                 }
             });
 
@@ -260,7 +249,6 @@ namespace Api.Application.Test.GamesTest
                 PlayerId = 4,
                 Win = 2,
                 Id = Guid.NewGuid(),
-                Timestamp = DateTime.UtcNow
             });
 
             _controller = new GamesController(serviceMock.Object);
@@ -287,7 +275,6 @@ namespace Api.Application.Test.GamesTest
                 PlayerId = 4,
                 Win = 2,
                 Id = id,
-                Timestamp = DateTime.UtcNow
             });
 
             _controller = new GamesController(serviceMock.Object);

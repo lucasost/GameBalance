@@ -2,7 +2,6 @@
 using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services.Game;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,7 +9,7 @@ namespace Api.Service.Services
 {
     public class GameService : IGameService
     {
-        private IRepository<GameEntity> _repository;
+        private readonly IRepository<GameEntity> _repository;
         public GameService(IRepository<GameEntity> repository)
         {
             _repository = repository;

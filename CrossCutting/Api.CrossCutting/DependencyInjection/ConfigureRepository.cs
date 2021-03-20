@@ -1,19 +1,21 @@
 ﻿using Api.Data.Context;
 using Api.Data.Repository;
 using Api.Domain.Interfaces;
+using Api.Domain.ViewModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Api.CrossCutting.DependencyInjection
 {
-    public class ConfigureRepository
+    public static class ConfigureRepository
     {
-        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection)
+        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
-            serviceCollection.AddScoped(typeof(ILeaderboardRepository<>), typeof(LeaderboardRepository<>));
-
-            serviceCollection.AddDbContext<GameContext>(options => options.UseSqlServer(@"Data Source=localhost,1433;Initial Catalog = Games;User Id=sa;Password=admin123@;"));
+            serviceCollection.AddScoped<ILeaderboardRepository<LeaderboardViewModel>, LeaderboardRepository>();
+            serviceCollection.AddDbContext<GameContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }

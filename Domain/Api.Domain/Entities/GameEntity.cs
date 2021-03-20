@@ -7,6 +7,11 @@ namespace Api.Domain.Entities
     [Table("Games")]
     public class GameEntity : BaseEntity
     {
+        public GameEntity()
+        {
+            Timestamp = DateTime.UtcNow;
+        }
+
         [Display(Name = "Player")]
         public long PlayerId { get; set; }
 
@@ -15,12 +20,9 @@ namespace Api.Domain.Entities
 
         public long Win { get; set; }
 
-        private DateTime _timestamp;
-
         public DateTime Timestamp
         {
-            get { return _timestamp; }
-            set { _timestamp = DateTime.UtcNow; }
+            get;
         }
     }
 }

@@ -6,9 +6,9 @@ namespace Api.Service.Test
 {
     public abstract class BaseTestService
     {
-        private IGameService _service;
+        private readonly IGameService _service;
 
-        public BaseTestService(IGameService service)
+        protected BaseTestService(IGameService service)
         {
             _service = service;
         }

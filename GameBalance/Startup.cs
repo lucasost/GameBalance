@@ -1,20 +1,18 @@
+using Api.Application.Filters;
 using Api.CrossCutting.DependencyInjection;
 using Api.Data.Context;
 using Api.Domain.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace GameBalance
 {
@@ -32,9 +30,12 @@ namespace GameBalance
         {
 
             ConfigureService.ConfigureDependenciesService(services);
-            ConfigureRepository.ConfigureDependenciesRepository(services);
+            ConfigureRepository.ConfigureDependenciesRepository(services, Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(DomainExceptionFilter));
+            });
 
             services.AddSwaggerGen(a =>
             {
@@ -94,17 +95,14 @@ namespace GameBalance
 
                         for (int i = 0; i < 200; i++)
                         {
-                            var randomGameId = new Random();
-                            var randomPlayerId = new Random();
-                            var randomWin = new Random();
+                            var random = new Random();
 
                             games.Add(new GameEntity()
                             {
                                 Id = Guid.NewGuid(),
-                                GameId = randomWin.Next(1, 30),
-                                PlayerId = randomWin.Next(1, 120),
-                                Win = randomWin.Next(-5, 8),
-                                Timestamp = DateTime.UtcNow
+                                GameId = random.Next(1, 30),
+                                PlayerId = random.Next(1, 120),
+                                Win = random.Next(-5, 8),
                             });
                         }
 

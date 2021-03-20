@@ -142,7 +142,6 @@ namespace Api.Service.Test
                 GameId = 1,
                 PlayerId = 2,
                 Win = 10,
-                Timestamp = DateTime.UtcNow
             });
             _service = _serviceMoq.Object;
 
@@ -177,7 +176,6 @@ namespace Api.Service.Test
                 GameId = 1,
                 PlayerId = 2,
                 Win = 10,
-                Timestamp = DateTime.UtcNow
             });
 
             _serviceMoq = new Mock<IGameService>();
@@ -188,7 +186,6 @@ namespace Api.Service.Test
                 GameId = 1,
                 PlayerId = 2,
                 Win = 10,
-                Timestamp = DateTime.UtcNow
             };
 
             _serviceMoq.Setup(a => a.Put(updateGame)).ReturnsAsync(new GameEntity()
@@ -197,7 +194,6 @@ namespace Api.Service.Test
                 GameId = 3,
                 PlayerId = 4,
                 Win = 20,
-                Timestamp = DateTime.UtcNow
             });
             _service = _serviceMoq.Object;
 

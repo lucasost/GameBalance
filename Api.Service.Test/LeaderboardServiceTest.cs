@@ -19,7 +19,6 @@ namespace Api.Service.Test
         public async Task E_Possivel_Executar_Metodo_GET()
         {
             // Arrange
-            var id = Guid.NewGuid();
             _serviceMoq = new Mock<ILeaderboardService>();
 
             _serviceMoq.Setup(a => a.GetTop100()).ReturnsAsync(new List<LeaderboardViewModel>()

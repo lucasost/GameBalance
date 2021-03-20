@@ -1,7 +1,5 @@
 ﻿using Api.Domain.Interfaces.Services.Game;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Api.Application.Controllers
@@ -10,7 +8,7 @@ namespace Api.Application.Controllers
     [ApiController]
     public class LeaderboardController : ControllerBase
     {
-        private ILeaderboardService _service;
+        private readonly ILeaderboardService _service;
         public LeaderboardController(ILeaderboardService service)
         {
             _service = service;
@@ -23,17 +21,7 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            try
-            {
-                return Ok(await _service.GetTop100());
-            }
-            catch (Exception ex)
-            {
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
-            }
+            return Ok(await _service.GetTop100());
         }
     }
-
 }

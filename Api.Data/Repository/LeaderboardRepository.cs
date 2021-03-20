@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Api.Data.Repository
 {
-    public class LeaderboardRepository<T> : ILeaderboardRepository<LeaderboardViewModel>
+    public class LeaderboardRepository : ILeaderboardRepository<LeaderboardViewModel>
     {
         private readonly GameContext _context;
         public LeaderboardRepository(GameContext context)
@@ -19,26 +19,19 @@ namespace Api.Data.Repository
 
         public async Task<List<LeaderboardViewModel>> GetTop100()
         {
-            try
-            {
-                var top100 = _context.Games
-                    .GroupBy(a => a.PlayerId)
-                    .Take(100)
-                    .Select(group => new LeaderboardViewModel
-                    {
-                        PlayerId = group.Key,
-                        Balance = group.Sum(a => a.Win),
-                        LastUpdateDate = DateTime.UtcNow
-                    })
-                    .OrderByDescending(b=>b.Balance)
-                    .ToList();
+            var top100 = await _context.Games
+                .GroupBy(a => a.PlayerId)
+                .Take(100)
+                .Select(group => new LeaderboardViewModel
+                {
+                    PlayerId = group.Key,
+                    Balance = group.Sum(a => a.Win),
+                    LastUpdateDate = DateTime.UtcNow
+                })
+                .OrderByDescending(b => b.Balance)
+                .ToListAsync();
 
-                return top100;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return top100;
         }
 
     }
