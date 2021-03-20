@@ -11,6 +11,8 @@ namespace Api.Data.Test
         public BaseTest()
         {
         }
+
+       
     }
     public class DbTest : IDisposable
     {
