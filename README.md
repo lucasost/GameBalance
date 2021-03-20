@@ -47,11 +47,11 @@ persistidos. Sua tarefa é implementar um serviço que exponha 2 endpoints:
 
 **Endpoint 1:**
 Permite que os servidores persistam os dados do resultado de um jogo:
-GameResult:
- PlayerId (long) – ID do jogador
- GameId (long) - ID do jogo
- Win (long) – o número de pontos ganhos (positivos ou negativos)
- Timestamp (date time) – data de quando o jogo foi realizado (UTC)
+*GameResult:*
+- PlayerId (long) – ID do jogador
+- GameId (long) - ID do jogo
+- Win (long) – o número de pontos ganhos (positivos ou negativos)
+- Timestamp (date time) – data de quando o jogo foi realizado (UTC)
 
 Como resultado da chamada a esse endpoint o balanço dos pontos do jogador devem ser
 primeiramente armazenado em memória no servidor e após um determinado tempo deverá
@@ -72,10 +72,10 @@ Esse endpoint permite que os web sites onde o jogador inicia os jogos mostre um 
 classificação dos 100 melhores jogadores. Os 100 melhores jogadores são ordenados pelo
 balanço de pontos que eles possuem em ordem descendente. Ele retornará os seguintes
 dados:
-Leaderboard:
-playerId (long) – ID do jogador
-balance (long) – balanço de pontos do jogador
-lastUpdateDate (date time) – data em que o balanço de pontos do jogador foi atualizado pela
+*Leaderboard:*
+- playerId (long) – ID do jogador
+- balance (long) – balanço de pontos do jogador
+- lastUpdateDate (date time) – data em que o balanço de pontos do jogador foi atualizado pela
 última vez (usando o fuso horário do servidor de aplicação)
 
 **NOTA:**
