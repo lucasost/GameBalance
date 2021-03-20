@@ -16,16 +16,18 @@ Desafio Técnico FullStack .Net
 ```
  
  - Acessar o container docker criado e adicionar o banco "Games" (pode ser via comando ou atráves Magnam
- - No projeto Api.Data rodar o comando 
+ - Definir o projeto Api.Application como principal
+ - No Package Manager Console, selecione o projeto Api.Data e execute o comando 
+
 ```
  Update-Database
 ```
-- Definir o projeto Api.Application como principal
+
  - Executar
 
 ***Observações:***
 - A cada deploy será realizado um Seed com 200 registros.
-- Certifique que não possua nenhum container docker usando a porta 1433.
+- Certifique que não possua nenhum container docker usando a porta 1533.
 
 
 **Desafio proposto:**

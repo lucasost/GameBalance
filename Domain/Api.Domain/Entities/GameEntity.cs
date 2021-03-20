@@ -22,7 +22,7 @@ namespace Api.Domain.Entities
 
         public DateTime Timestamp
         {
-            get;
+            get; private set;
         }
     }
 }

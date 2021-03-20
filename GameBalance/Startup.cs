@@ -102,7 +102,7 @@ namespace GameBalance
                                 Id = Guid.NewGuid(),
                                 GameId = random.Next(1, 30),
                                 PlayerId = random.Next(1, 120),
-                                Win = random.Next(-5, 8),
+                                Win = random.Next(-10, 30),
                             });
                         }
 

@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Api.Data.Test
 {
-    public class GameInsertTest : BaseTest, IClassFixture<DbTest>
+    public class GameInsertTest
     {
         private readonly GameContext _context;
 
