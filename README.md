@@ -10,7 +10,7 @@ Desafio Técnico FullStack .Net
 
 ***Instruções:***
 
-- Ir na pasta do projeto e executar:
+- Ir na pasta do projeto e executar com o *PowerSehll*:
 ```
  RunApp.ps1
  ```
