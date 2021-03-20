@@ -3,10 +3,7 @@ using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Api.Data.Repository
@@ -55,7 +52,6 @@ namespace Api.Data.Repository
                     item.Id = Guid.NewGuid();
                 }
 
-                //item.LastUpdateDate = DateTime.UtcNow;
                 _dataset.Add(item);
 
                 await _context.SaveChangesAsync();
@@ -102,8 +98,6 @@ namespace Api.Data.Repository
                 {
                     return null;
                 }
-
-                //item.LastUpdateDate = DateTime.UtcNow;
 
                 _context.Entry(result).CurrentValues.SetValues(item);
                 await _context.SaveChangesAsync();
