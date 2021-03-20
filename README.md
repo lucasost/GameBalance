@@ -13,7 +13,7 @@ Desafio Técnico FullStack .Net
 ```
  Update-Database
 ```
-- Definir o projeto Api.Application com principal
+- Definir o projeto Api.Application como principal
  - Executar
 
 *Obs:* A cada deploy será realizado um Seed com 200 registros.
