@@ -16,7 +16,7 @@ Desafio Técnico FullStack .Net
 - Definir o projeto Api.Application com principal
  - Executar
 
-*Obs:* A deploy será realizado um Seed com 200 registros.
+*Obs:* A cada deploy será realizado um Seed com 200 registros.
 
 **Desafio proposto:**
 Desafio técnico fullstack – KPMG
