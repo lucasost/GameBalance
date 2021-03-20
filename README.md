@@ -15,7 +15,7 @@ Desafio Técnico FullStack .Net
  RunApp.ps1
  ```
 
-* Se a execução apresentar erro, execute o comando abaixo e depois tente executar o RunApp.ps1 novamente. *
+*Se a execução apresentar erro, execute o comando abaixo e depois tente executar o RunApp.ps1 novamente.*
 ```
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force 
 ```
